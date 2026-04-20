@@ -1,9 +1,4 @@
 import Select from 'react-select';
-import type {ServiceType} from "@/types/entities/service.type.ts";
-
-function isConectorOrKios(label: ServiceType) {
-  return label === "lift" || label === 'escalator' || label === 'stairs' || label === 'kiosk'
-}
 
 const colourStyles = {
   container: (styles: any) => ({ ...styles, width: '100%' }),
@@ -40,13 +35,10 @@ export const SelectDefault = <T,>({ value, onChange, options, disabled = false, 
       boxShadow: 'none',
       ':hover': { border: '1px solid #4d4d4d' },
     }),
-    singleValue: (styles: any, state: any) => {
-      const label = state.data?.label;
-      const color = state.data?.color;
-
+    singleValue: (styles: any) => {
       return {
         ...styles,
-        color: isConectorOrKios(label) ? color ?? "white" : disabled ? "#2f2f2f" : "white",
+        color: disabled ? "#2f2f2f" : "white",
         fontSize: 14,
       };
     },
@@ -62,12 +54,11 @@ export const SelectDefault = <T,>({ value, onChange, options, disabled = false, 
       { isDisabled, isSelected, data }: { isDisabled: boolean; isSelected: boolean, data: any }
     ) => {
       const label = data?.label;
-      const color = data?.color;
 
       return {
         ...styles,
         backgroundColor: isSelected ? '#333' : '#111',
-        color: isConectorOrKios(label) ? color ?? "white" :'white',
+        color: 'white',
         borderBottom: label === 'kiosk' ? "1px solid #777" : "none",
         cursor: isDisabled ? 'not-allowed' : 'default',
         ':active': { ...styles[':active'], backgroundColor: 'green' },
