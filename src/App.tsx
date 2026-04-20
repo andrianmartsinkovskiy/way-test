@@ -71,7 +71,7 @@ function App() {
           locationId: selectedLocation?.value ?? null,
         },
       },
-      "http://31.131.18.96:3091"
+      "http://31.131.18.96:3091/"
     );
 
   }, [isReady, selectedService, selectedLocation]);
@@ -112,7 +112,7 @@ function App() {
       <div className="map">
         <iframe
           ref={iframeRef}
-          src="http://localhost:5174"
+          src="http://31.131.18.96:3091/"
           width="100%"
           height="100%"
         ></iframe>
