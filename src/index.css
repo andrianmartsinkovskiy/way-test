@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --gray100: #121212;
+  --gray200: #171717;
+  --gray300: #212121;
+  --gray400: #2f2f2f;
+  --gray500: #4d4d4d;
+  --gray600: #5a5a5a;
+  --gray700: #737373;
+  --gray800: #b0b0b0;
+  --gray900: #ffffff;
+
+  --green: #00800f;
+  --green-light: #068f15;
+  --blue: #2e5283;
+  --blue-light: rgb(46, 82, 161);
+  --orange: #b17a50;
+  --red: #c03f3f;
+  --red-light: #d84848;
+
+
+  --white: #ffffff;
+  --black: #000000;
+  --disabled: var(--gray600);
+  --info: var(--gray700);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #111;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+}
+
+div::-webkit-scrollbar {
+  display: none;
+}
+
+div {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+input {
+  background: #232323;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+}
+
+.choose {
+  position: fixed;
+  z-index: 1000;
+  left: 40px;
+  top: 40px;
+  display: flex;
+  width: 400px;
+}
+
+.map {
+  height: 100vh;
+  width: 100vw;
+}
+
+.map iframe {
+  border: none
+}
