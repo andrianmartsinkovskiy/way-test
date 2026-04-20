@@ -71,7 +71,7 @@ function App() {
           locationId: selectedLocation?.value ?? null,
         },
       },
-      "http://localhost:5174"
+      "http://31.131.18.96:3091"
     );
 
   }, [isReady, selectedService, selectedLocation]);
