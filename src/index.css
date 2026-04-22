@@ -58,8 +58,52 @@ input {
   z-index: 1000;
   left: 40px;
   top: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 24px;
+  width: 800px;
+  transition: 0.3s;
+
+}
+
+.simple {
+  top: -90px;
+}
+
+.active {
+  top: 40px;
+}
+
+
+
+.stairs {
+  height: 44px;
+  align-items: center;
+  column-gap: 8px;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid #444;
+  background: #121212;
+}
+
+.stairs > div {
+  font-size: 14px;
+  cursor: pointer;
+  height: 100%;
   display: flex;
-  width: 400px;
+  justify-content: center;
+  align-items: center;
+}
+
+.choose > div {
+
+}
+
+.title {
+  font-size: 14px;
+  margin-bottom: 8px;
+  font-weight: 500;
 }
 
 .map {

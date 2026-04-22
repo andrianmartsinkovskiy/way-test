@@ -19,10 +19,14 @@ interface ISelect<T> {
   onChange: (val: T | null) => void;
   options: T[];
   disabled?: boolean;
+  isClearable?: boolean;
   labelKey?: string;
+  placeholder?: string
 }
 
-export const SelectDefault = <T,>({ value, onChange, options, disabled = false, labelKey = 'type' }: ISelect<T>) => {
+export const SelectDefault = <T,>({
+  value, onChange, options, disabled = false, labelKey = 'type', placeholder = '...', isClearable = true
+}: ISelect<T>) => {
   const selectStyles = {
     ...colourStyles,
     control: (styles: any) => ({
@@ -75,11 +79,12 @@ export const SelectDefault = <T,>({ value, onChange, options, disabled = false, 
       onChange={(v) => onChange(v)}
       value={value}
       styles={selectStyles}
-      isClearable
+      isClearable={isClearable}
       isSearchable={false}
       isMulti={false}
       getOptionLabel={(option: any) => option[labelKey]}
       getOptionValue={(option: any) => option.value.toString()}
+      placeholder={placeholder}
     />
   );
 };
