@@ -55,7 +55,7 @@ interface IIntegratedSetup {
 function App() {
   const [selectedService, setSelectedService] = useState<IOption | null>(null);
   const [selectedLocation, setSelectedLocation] = useState<IOption | null>(null);
-  const [selectedKiosk, setSelectedKiosk] = useState<IOption>(KIOSK_OPTIONS[1]);
+  const [selectedKiosk, setSelectedKiosk] = useState<IOption>(KIOSK_OPTIONS[0]);
   const [isAccessible, setIsAccessible] = useState<boolean>(false);
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const [isReady, setIsReady] = useState(false);
