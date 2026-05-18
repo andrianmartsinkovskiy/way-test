@@ -2,23 +2,22 @@ import {SelectDefault} from "./components/select-default";
 import {useEffect, useRef, useState} from "react";
 
 const SERVICE_OPTIONS = [
-  {label: "info", value: "info"},
-  {label: "atm", value: "atm"},
-  {label: "lounge", value: "lounge"},
-  {label: "storage", value: "storage"},
+  {label: "Baby lounge", value: "babylounge"},
+  {label: "wc", value: "wc"},
+  {label: "gift", value: "gift"},
+  {label: "Handicap WC", value: "handicapwc"},
 ]
 
 const LOCATION_OPTIONS = [
-  {label: "Adidas", value: "Adidas"},
-  {label: "Puma", value: "Puma"},
-  {label: "Nike", value: "Nike"},
-  {label: "Zara", value: "Zara"},
-  {label: "Levis", value: "Levis"},
+  {label: "A4", value: "A4"},
+  {label: "233b", value: "233b"},
 ]
 
 const KIOSK_OPTIONS = [
-  {label: "1", value: "0"},
-  {label: "2", value: "1"},
+  {label: "1", value: "1"},
+  {label: "2", value: "2"},
+  {label: "3", value: "3"},
+  {label: "4", value: "4"},
 ]
 
 
@@ -27,13 +26,7 @@ interface IOption {
   value: string
 }
 
-const LOC = [
-  {id: 'Adidas', image: 'https://upload.wikimedia.org/wikipedia/commons/2/20/Adidas_Logo.svg', isEncor: true, name: 'Adidas'},
-  {id: 'Nike', image: 'https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg', isEncor: true, name: 'Nike'},
-  {id: 'Puma', image: 'https://cdn.brandfetch.io/idDV9AjI6R/theme/dark/symbol.svg?c=1dxbfHSJFAPEGdCLU4o5B', isEncor: false, name: 'Puma'},
-  {id: 'Zara', image: 'https://upload.wikimedia.org/wikipedia/commons/f/fd/Zara_Logo.svg', isEncor: true, name: 'Zara'},
-  {id: 'Levis', image: 'https://upload.wikimedia.org/wikipedia/commons/7/75/Levi%27s_logo.svg', isEncor: false, name: 'Levis'},
-]
+
 
 interface IIntegratedLocation {
   id: string;
@@ -43,7 +36,7 @@ interface IIntegratedLocation {
 }
 
 interface IIntegratedSetup {
-  projectId: number;
+  projectId: string;
   kioskId: number;
   locationId: string | null;
   allLocations: IIntegratedLocation[]
@@ -61,12 +54,15 @@ function App() {
   const [isReady, setIsReady] = useState(false);
 
   const [mapSetup] = useState<IIntegratedSetup>({
-    projectId: 2,
-    allLocations: LOC,
-    kioskId: 0,
-    service: null,
-    locationId: null,
+    kioskId: 1,
+    projectId: 'kringlan',
     isAccessible: false,
+    locationId: null,
+    service: null,
+    allLocations: [
+      {image: 'test', name: "A4", isEncor: false, id: 'A4'},
+      {image: 'test', name: "223b", isEncor: true, id: '233b'},
+    ]
   });
 
   useEffect(() => {
